@@ -4,33 +4,24 @@
 using namespace std;
 
 class Animal {
-public:
-	Animal();
-	virtual string noise() const = 0;
-	static int repeats() {
-
-		return repeatnumber;
-	}
-	int ageinMonths() {
-		return age;
-	}
-
-	void print() {
-		cout << age << " ";
-		for (int i = 0; i < repeatnumber; i++) {
-			cout << animalnoise << " ";
-		}
-		cout << "\n";
-	}
-
+	private:
+		const string animalnoise = 0;
+		static const int repeatnumber = 0;
+		int age = 0;
+	public:
+		Animal(string animalnoise, int repeatnumber, int age) {
+			animalnoise = animalnoise;
+			repeatnumber = repeatnumber;
+			age = age;
+		};
+		virtual string noise() const = 0;
+		static int repeats() const = 0;
+		int ageinMonths();
+		void print();
 };
 
 
 class Cow : public Animal {
-private:
-	const string animalnoise;
-	static const int repeatnumber;
-	int age;
 public:
 	Cow();
 	string noise() {
@@ -64,7 +55,6 @@ class Sheep : public Animal {
 };
 
 int main() {
-	Animal cat = new Cat;
-	c.noise();
+
 	return 0;
 }
