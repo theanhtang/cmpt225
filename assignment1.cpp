@@ -5,18 +5,22 @@ using namespace std;
 
 class Animal {
 	private:
-		string animalNoise = NULL;
-		static const int repeatNumber = 0;
-		int age = 0;
+		string animalnoise;
+		int repeatnumber;
+		int age;
 	public:
-		Animal();
-		Animal(string animalNoise, int repeatNumber, int age) {
+		Animal() {
+			animalnoise = NULL;
+			repeatnumber = 0;
+			age = 0;
+		}
+		Animal(string animalnoise, int repeatnumber, int age) {
 			animalNoise = animalNoise;
 			repeatNumber = repeatNumber;
 			age = age;
 		};
 		virtual string noise() const = 0;
-		static int repeats() const = 0;
+		int repeats() const = 0;
 		int ageinMonths();
 		void print();
 };
